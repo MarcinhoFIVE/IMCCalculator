@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".RelativeActivity">
 
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:text="IMC"
+        android:layout_marginTop="48dp"
         android:textColor="@color/red"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/etAltura"
+        android:layout_marginBottom="32dp"
         style="@style/input_style"
-        android:hint="Altura (ex: 1,70m)" />
+        android:layout_below="@+id/tvTitulo"
+        android:layout_centerInParent="true"
+        android:hint="Altura (ex: 1,70m)"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/etPeso"
         style="@style/input_style"
+        android:layout_below="@id/etAltura"
+        android:layout_centerInParent="true"
         android:layout_marginBottom="50dp"
         android:hint="Peso (ex: 80,04kg)" />
 
     <Button
         android:id="@+id/btnIMC"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_below="@id/etPeso"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:backgroundTint="@color/red"
-        android:text="Calcular IMC" />
+        android:text="Calcular IMC"
+        tools:visibility="visible" />
 
     <TextView
+        tools:visibility="gone"
         android:id="@+id/tvResultado"
         style="@style/input_style"
         android:text="Resultado"
         android:textStyle="normal" />
 
-</LinearLayout>
+</RelativeLayout>
